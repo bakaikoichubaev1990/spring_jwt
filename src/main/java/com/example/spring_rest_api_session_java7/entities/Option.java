@@ -1,6 +1,6 @@
 package com.example.spring_rest_api_session_java7.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
