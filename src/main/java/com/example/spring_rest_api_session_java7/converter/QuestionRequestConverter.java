@@ -1,6 +1,6 @@
 package com.example.spring_rest_api_session_java7.converter;
 
-import com.example.spring_rest_api_session_java7.dto.QuestionRequest;
+import com.example.spring_rest_api_session_java7.dto.request.QuestionRequest;
 import com.example.spring_rest_api_session_java7.entities.Option;
 import com.example.spring_rest_api_session_java7.entities.Question;
 import org.springframework.stereotype.Component;

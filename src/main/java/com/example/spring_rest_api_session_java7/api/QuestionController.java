@@ -1,8 +1,8 @@
 package com.example.spring_rest_api_session_java7.api;
 
 import com.example.spring_rest_api_session_java7.converter.QuestionConverterView;
-import com.example.spring_rest_api_session_java7.dto.QuestionRequest;
-import com.example.spring_rest_api_session_java7.dto.QuestionResponse;
+import com.example.spring_rest_api_session_java7.dto.request.QuestionRequest;
+import com.example.spring_rest_api_session_java7.dto.response.QuestionResponse;
 import com.example.spring_rest_api_session_java7.service.QuestionService;
 import com.example.spring_rest_api_session_java7.service.impl.QuestionServiceImpl;
 import lombok.RequiredArgsConstructor;

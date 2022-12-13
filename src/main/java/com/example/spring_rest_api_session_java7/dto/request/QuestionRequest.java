@@ -1,4 +1,4 @@
-package com.example.spring_rest_api_session_java7.dto;
+package com.example.spring_rest_api_session_java7.dto.request;
 
 import com.example.spring_rest_api_session_java7.entities.Option;
 import lombok.AllArgsConstructor;
@@ -9,9 +9,9 @@ import java.util.List;
 
 @Getter
 @Setter
-public class QuestionResponse {
+@AllArgsConstructor
+public class QuestionRequest {
 
-    private Long id;
     private String name;
     private String text;
     private int duration;

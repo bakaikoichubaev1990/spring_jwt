@@ -1,6 +1,6 @@
 package com.example.spring_rest_api_session_java7.converter;
 
-import com.example.spring_rest_api_session_java7.dto.QuestionResponse;
+import com.example.spring_rest_api_session_java7.dto.response.QuestionResponse;
 import lombok.Getter;
 import lombok.Setter;
 
