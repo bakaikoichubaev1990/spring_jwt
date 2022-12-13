@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/jwt")
+@RequestMapping("/api/jwt/")
 public class AuthApi {
 
     private final UserService userService;
@@ -32,13 +32,13 @@ public class AuthApi {
     private final UserRepository userRepository;
     private final LoginConverter loginConverter;
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public ResponseEntity<LoginResponse> getLogin(@RequestBody RegisterRequest request) {
         try {
             UsernamePasswordAuthenticationToken token =
                     new UsernamePasswordAuthenticationToken(request.getEmail(),
                             request.getPassword());
-            User user = userRepository.finByEmail(token.getName()).get();
+            User user = userRepository.findByEmail(token.getName()).get();
             return ResponseEntity.ok().body(loginConverter.
                     loginView(jwtTokenUtil.generateToken(user),
                             ValidationExceptionType.SUCCESSFUL, user));
@@ -51,7 +51,7 @@ public class AuthApi {
         }
     }
 
-    @PostMapping("/registration")
+    @PostMapping("registration")
     public RegisterResponse create(@RequestBody RegisterRequest request) {
         return userService.create(request);
     }

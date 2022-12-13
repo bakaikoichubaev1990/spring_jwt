@@ -1,7 +1,6 @@
 package com.example.spring_rest_api_session_java7.security.jwt;
 
 import com.example.spring_rest_api_session_java7.service.impl.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,12 +20,15 @@ import java.io.IOException;
  */
 
 @Component
-@RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 
     private final UserService userService;
     private final JwtTokenUtil jwtTokenUtil;
 
+    public JwtFilter(UserService userService, JwtTokenUtil jwtTokenUtil) {
+        this.userService = userService;
+        this.jwtTokenUtil = jwtTokenUtil;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -48,7 +50,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         .buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(token);
             }
-            filterChain.doFilter(request,response);
-        }
+
+        }filterChain.doFilter(request,response);
     }
 }
