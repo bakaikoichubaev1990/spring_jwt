@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * author: Ulansky
- */
+
 @Getter
 @Setter
 public class RegisterRequest {
